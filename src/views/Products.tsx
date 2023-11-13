@@ -1,11 +1,7 @@
 import { onValue, push, ref, remove } from "firebase/database";
 import { useEffect, useState } from "react";
 import { db } from "../utils/firebase";
-
-type TProduct = {
-  id: string;
-  name: string;
-};
+import Product, { TProduct } from "../components/Product";
 
 const Products = () => {
   const [products, setProducts] = useState<TProduct[]>([]);
@@ -69,18 +65,7 @@ const Products = () => {
       </fieldset>
       {loading && <div>Loading...</div>}
       {products.map((product: TProduct) => (
-        <div key={product.id}>
-          <div>
-            <b>{product.id}:</b>
-            <span>{product.name}</span>
-            <button
-              style={{ marginLeft: "10px" }}
-              onClick={deleteProduct(product.id)}
-            >
-              Delete
-            </button>
-          </div>
-        </div>
+        <Product key={product.id} {...product} onDelete={deleteProduct} />
       ))}
     </div>
   );
