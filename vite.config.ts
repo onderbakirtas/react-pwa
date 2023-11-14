@@ -39,9 +39,6 @@ const pwaConfig: Partial<VitePWAOptions> = {
       }
     ],
   },
-  devOptions: {
-    enabled: true,
-  },
 };
 
 // https://vitejs.dev/config/
