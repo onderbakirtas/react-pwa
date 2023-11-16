@@ -7,7 +7,7 @@ const RootLayout: FC = () => {
       <nav className="nav">
         <Link to="/">Home</Link>
         <Link to="/products">Products</Link>
-        <Link to="/chat">Chat</Link>
+        <Link to="/auctions">Auctions</Link>
       </nav>
       <Outlet />
     </main>
